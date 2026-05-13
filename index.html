@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gray Cat & Mr. Tabs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Instrument+Sans:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --warm-white: #faf7f2;
+      --ink: #1a1510;
+      --brown: #5c3d2e;
+      --pink-blush: #f2d4c8;
+      --olive: #7a8c5e;
+      --yellow-punch: #e8d44d;
+      --rust: #c4623a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      border-bottom: 2px solid var(--ink);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      border: 2px solid var(--ink);
+      padding: 4px 14px;
+      border-radius: 100px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--rust); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: 60px 40px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 16px;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 20vw, 16rem);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      position: relative;
+    }
+
+    .hero-title .line-cats {
+      display: block;
+    }
+
+    .hero-title .line-amp {
+      display: block;
+      color: var(--rust);
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      line-height: 1;
+      position: relative;
+      transform: translate(-10px, -20px);
+    }
+
+    .hero-sub-block {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      padding-bottom: 48px;
+    }
+
+    .hero-sub {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--brown);
+      text-transform: uppercase;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--yellow-punch);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding: 13px 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-track span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      color: var(--ink);
+      padding: 0 20px;
+    }
+
+    .marquee-track .star { color: var(--rust); }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      border-bottom: 1px solid rgba(26,21,16,.15);
+    }
+
+    @media (max-width: 700px) {
+      .intro { grid-template-columns: 1fr; }
+    }
+
+    .intro-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 0.95;
+      color: var(--ink);
+    }
+
+    .intro-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--rust);
+      display: block;
+    }
+
+    .intro-right {
+      padding-left: 52px;
+    }
+
+    @media (max-width: 700px) {
+      .intro-right { padding-left: 0; margin-top: 32px; }
+    }
+
+    .intro-body {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--brown);
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      padding: 10px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* ── CATS SECTION ── */
+    .cats-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px 100px;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 600;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(26,21,16,.2);
+    }
+
+    /* Editorial grid */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 700px) {
+      .cat-grid { grid-template-columns: 1fr; }
+    }
+
+    .cat-card {
+      background: var(--warm-white);
+      border: 2px solid var(--ink);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+
+    .cat-card:nth-child(2) {
+      background: var(--pink-blush);
+    }
+
+    .cat-photo-box {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: rgba(26,21,16,.06);
+      border-bottom: 2px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown);
+      overflow: hidden;
+    }
+
+    .cat-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cat-body {
+      padding: 32px 28px 36px;
+    }
+
+    .cat-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .cat-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .cat-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(26,21,16,.15);
+    }
+
+    .stat-k {
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown);
+      display: block;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .stat-v {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .cat-desc {
+      font-size: 0.82rem;
+      line-height: 1.85;
+      color: var(--brown);
+    }
+
+    /* ── QUOTE STRIP ── */
+    .quote-strip {
+      background: var(--ink);
+      padding: 70px 40px;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+      line-height: 1.3;
+      color: var(--cream);
+      max-width: 760px;
+      margin: 0 auto 16px;
+    }
+
+    .quote-attr {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,.45);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 2px solid var(--ink);
+      background: var(--cream);
+    }
+
+    footer p {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">✦ The Cats ✦</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gray Cat</a></li>
+      <li><a href="#">Mr. Tabs</a></li>
+      <li><a href="#">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">a website dedicated to my angel babies</p>
+    <h1 class="hero-title">
+      <span class="line-cats">GRAY CAT</span>
+      <span class="line-amp">&amp;</span>
+      <span class="line-cats">MR. TABS</span>
+    </h1>
+    <div class="hero-sub-block">
+      <p class="hero-sub">sunggle bugs &nbsp;·&nbsp; dawgs 4 lyfe</p>
+      <p class="hero-sub">cutie patooties &nbsp;·&nbsp; Full-time good boys</p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>GRAY CAT</span><span class="star"> ✦ </span>
+      <span>MR. TABS</span><span class="star"> ✦ </span>
+      <span>CUDDLE EXPERTS</span><span class="star"> ✦ </span>
+      <span>FURNITURE CLIMBERS</span><span class="star"> ✦ </span>
+      <span>SNUGGLE BUGS</span><span class="star"> ✦ </span>
+      <span>CERTIFIED GOOD BOYS</span><span class="star"> ✦ </span>
+      <span>GRAY CAT</span><span class="star"> ✦ </span>
+      <span>MR. TABS</span><span class="star"> ✦ </span>
+      <span>CUDDLE EXPERTS</span><span class="star"> ✦ </span>
+      <span>FURNITURE CLIMBERS</span><span class="star"> ✦ </span>
+      <span>SNUGGLE BUGS</span><span class="star"> ✦ </span>
+      <span>CERTIFIED GOOD BOYS</span><span class="star"> ✦ </span>
+      <!-- duplicate for seamless loop -->
+      <span>GRAY CAT</span><span class="star"> ✦ </span>
+      <span>MR. TABS</span><span class="star"> ✦ </span>
+      <span>CUDDLE EXPERTS</span><span class="star"> ✦ </span>
+      <span>FURNITURE CLIMBERS</span><span class="star"> ✦ </span>
+      <span>SNUGGLE BUGS</span><span class="star"> ✦ </span>
+      <span>CERTIFIED GOOD BOYS</span><span class="star"> ✦ </span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div>
+      <h2 class="intro-title">MEET<br>THE<br><em>crew</em></h2>
+    </div>
+    <div class="intro-right">
+      <p class="intro-body">
+        Two cats. One cozy home. An endless supply of purrs. Gray Cat and Mr. Tabs were first found as little kittens running around these city streets. Now they're living it up, climbing furniture and napping in the sunshine. This is their site.
+      </p>
+      <a href="#cats" class="btn">Meet them →</a>
+    </div>
+  </section>
+
+  <!-- CATS -->
+  <section class="cats-section" id="cats">
+    <p class="section-label">The residents</p>
+    <div class="cat-grid">
+
+      <!-- Gray Cat -->
+      <div class="cat-card">
+        <div class="cat-photo-box"><img src="gray.jpeg" alt="Gray Cat"></div>
+        <div class="cat-body">
+          <span class="cat-tag">aka Grubalicious</span>
+          <h3 class="cat-name">GRAY CAT</h3>
+          <div class="cat-stats">
+            <div>
+              <span class="stat-k">Breed</span>
+              <span class="stat-v">Long-Hair Mix</span>
+            </div>
+            <div>
+              <span class="stat-k">Color</span>
+              <span class="stat-v">Gray</span>
+            </div>
+            <div>
+              <span class="stat-k">Energy</span>
+              <span class="stat-v">Maximum</span>
+            </div>
+            <div>
+              <span class="stat-k">Specialty</span>
+              <span class="stat-v">Climbing Everything</span>
+            </div>
+          </div>
+          <p class="cat-desc">
+            Grubbies has a heart of gold and claws of steal. Gray makes the craziest jumps and sticks every landing. He also has a soft side. When I'm watching tv or reading a book, he will snuggle up right in my lap. Gray also loves eating mango and eggs!
+          </p>
+        </div>
+      </div>
+
+      <!-- Mr. Tabs -->
+      <div class="cat-card">
+        <div class="cat-photo-box"><img src="tabs.jpeg" alt="Mr. Tabs"></div>
+        <div class="cat-body">
+          <span class="cat-tag">aka Tabathy</span>
+          <h3 class="cat-name">MR. TABS</h3>
+          <div class="cat-stats">
+            <div>
+              <span class="stat-k">Breed</span>
+              <span class="stat-v">Brown Tabby</span>
+            </div>
+            <div>
+              <span class="stat-k">Color</span>
+              <span class="stat-v">Brown Tabby</span>
+            </div>
+            <div>
+              <span class="stat-k">Vibe</span>
+              <span class="stat-v">Deeply Chill</span>
+            </div>
+            <div>
+              <span class="stat-k">Specialty</span>
+              <span class="stat-v">Premium Snuggles</span>
+            </div>
+          </div>
+          <p class="cat-desc">
+            Tabsy is a calm presence. He loves to cuddle and has very loud purrs. He also loves to eat. One time, I caught him eating cardboard. He was fine! Tabitha is also very gentle. He can sense how you are feeling and will always show up at the right time with slow blinks and hugs.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-strip">
+    <p class="quote-text">"Cats are a part of your life, but you are their whole world"</p>
+    <p class="quote-attr">— someone online one time</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Made with love for Gray Cat & Mr. Tabs &nbsp;✦&nbsp; Planet Earth</p>
+  </footer>
+
+</body>
+</html>
