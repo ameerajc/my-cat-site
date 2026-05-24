@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery — Gray Cat & Mr. Tabs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Instrument+Sans:wght@400;600&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --warm-white: #faf7f2;
+      --ink: #1a1510;
+      --brown: #5c3d2e;
+      --yellow-punch: #e8d44d;
+      --rust: #c4623a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      border-bottom: 2px solid var(--ink);
+      background: var(--cream);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      border: 2px solid var(--ink);
+      padding: 4px 14px;
+      border-radius: 100px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--rust); }
+    .nav-links a.active { color: var(--rust); border-bottom: 2px solid var(--rust); padding-bottom: 2px; }
+
+    /* WIP PAGE */
+    .wip-wrap {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .wip-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      background: var(--yellow-punch);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      padding: 4px 16px;
+      border-radius: 100px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .wip-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 12vw, 9rem);
+      line-height: 0.9;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .wip-title em {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--rust);
+      display: block;
+    }
+
+    .wip-sub {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--brown);
+      max-width: 420px;
+      margin: 0 auto 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      padding: 10px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    /* Decorative paw prints */
+    .paws {
+      font-size: 2rem;
+      letter-spacing: 12px;
+      margin-bottom: 24px;
+      opacity: 0.25;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 2px solid var(--ink);
+      background: var(--cream);
+    }
+
+    footer p {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">✦ The Cats ✦</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#gray-cat">Gray Cat</a></li>
+      <li><a href="index.html#mr-tabs">Mr. Tabs</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="catsitter.html">Cat Sitter</a></li>
+    </ul>
+  </nav>
+
+  <div class="wip-wrap">
+    <div class="paws">🐾 🐾 🐾</div>
+    <span class="wip-tag">🚧 Work in Progress</span>
+    <h1 class="wip-title">GALLERY<br><em>coming soon</em></h1>
+    <p class="wip-sub">We're collecting the best glamour shots of Gray Cat and Mr. Tabs. Check back soon.</p>
+    <a href="index.html" class="btn">← Back home</a>
+  </div>
+
+  <footer>
+    <p>Made with love for Gray Cat & Mr. Tabs &nbsp;✦&nbsp; Planet Earth</p>
+  </footer>
+
+</body>
+</html>

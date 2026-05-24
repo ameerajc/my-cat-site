@@ -48,6 +48,8 @@
       border: 2px solid var(--ink);
       padding: 4px 14px;
       border-radius: 100px;
+      text-decoration: none;
+      color: var(--ink);
     }
 
     .nav-links {
@@ -94,9 +96,7 @@
       position: relative;
     }
 
-    .hero-title .line-cats {
-      display: block;
-    }
+    .hero-title .line-cats { display: block; }
 
     .hero-title .line-amp {
       display: block;
@@ -105,8 +105,6 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(3rem, 10vw, 8rem);
       line-height: 1;
-      position: relative;
-      transform: translate(-10px, -20px);
     }
 
     .hero-sub-block {
@@ -186,9 +184,7 @@
       display: block;
     }
 
-    .intro-right {
-      padding-left: 52px;
-    }
+    .intro-right { padding-left: 52px; }
 
     @media (max-width: 700px) {
       .intro-right { padding-left: 0; margin-top: 32px; }
@@ -245,7 +241,6 @@
       background: rgba(26,21,16,.2);
     }
 
-    /* Editorial grid */
     .cat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -269,9 +264,7 @@
       box-shadow: 6px 6px 0 var(--ink);
     }
 
-    .cat-card:nth-child(2) {
-      background: var(--pink-blush);
-    }
+    .cat-card:nth-child(2) { background: var(--pink-blush); }
 
     .cat-photo-box {
       width: 100%;
@@ -294,9 +287,7 @@
       object-fit: cover;
     }
 
-    .cat-body {
-      padding: 32px 28px 36px;
-    }
+    .cat-body { padding: 32px 28px 36px; }
 
     .cat-tag {
       display: inline-block;
@@ -308,6 +299,7 @@
       padding: 3px 10px;
       border-radius: 100px;
       margin-bottom: 16px;
+      margin-top: 8px;
       font-weight: 600;
     }
 
@@ -395,12 +387,13 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">✦ The Cats ✦</div>
+    <a href="index.html" class="nav-logo">✦ The Cats ✦</a>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Gray Cat</a></li>
-      <li><a href="#">Mr. Tabs</a></li>
-      <li><a href="#">Gallery</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#gray-cat">Gray Cat</a></li>
+      <li><a href="#mr-tabs">Mr. Tabs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="catsitter.html">Cat Sitter</a></li>
     </ul>
   </nav>
 
@@ -413,8 +406,8 @@
       <span class="line-cats">MR. TABS</span>
     </h1>
     <div class="hero-sub-block">
-      <p class="hero-sub">sunggle bugs &nbsp;·&nbsp; dawgs 4 lyfe</p>
-      <p class="hero-sub">cutie patooties &nbsp;·&nbsp; Full-time good boys</p>
+      <p class="hero-sub">snuggle bugs &nbsp;·&nbsp; dawgs 4 lyfe</p>
+      <p class="hero-sub">cutie patooties &nbsp;·&nbsp; full-time good boys</p>
     </div>
   </section>
 
@@ -433,7 +426,6 @@
       <span>FURNITURE CLIMBERS</span><span class="star"> ✦ </span>
       <span>SNUGGLE BUGS</span><span class="star"> ✦ </span>
       <span>CERTIFIED GOOD BOYS</span><span class="star"> ✦ </span>
-      <!-- duplicate for seamless loop -->
       <span>GRAY CAT</span><span class="star"> ✦ </span>
       <span>MR. TABS</span><span class="star"> ✦ </span>
       <span>CUDDLE EXPERTS</span><span class="star"> ✦ </span>
@@ -462,11 +454,11 @@
     <div class="cat-grid">
 
       <!-- Gray Cat -->
-      <div class="cat-card">
+      <div class="cat-card" id="gray-cat">
         <div class="cat-photo-box"><img src="gray.jpeg" alt="Gray Cat"></div>
         <div class="cat-body">
-          <span class="cat-tag">aka Grubalicious</span>
           <h3 class="cat-name">GRAY CAT</h3>
+          <span class="cat-tag">aka Grubalicious</span>
           <div class="cat-stats">
             <div>
               <span class="stat-k">Breed</span>
@@ -486,17 +478,17 @@
             </div>
           </div>
           <p class="cat-desc">
-            Grubbies has a heart of gold and claws of steal. Gray makes the craziest jumps and sticks every landing. He also has a soft side. When I'm watching tv or reading a book, he will snuggle up right in my lap. Gray also loves eating mango and eggs!
+            Grubbies has a heart of gold and claws of steel. Gray makes the craziest jumps and sticks every landing. He also has a soft side — when I'm watching TV or reading a book, he will snuggle up right in my lap. Gray also loves eating mango and eggs!
           </p>
         </div>
       </div>
 
       <!-- Mr. Tabs -->
-      <div class="cat-card">
+      <div class="cat-card" id="mr-tabs">
         <div class="cat-photo-box"><img src="tabs.jpeg" alt="Mr. Tabs"></div>
         <div class="cat-body">
-          <span class="cat-tag">aka Tabathy</span>
           <h3 class="cat-name">MR. TABS</h3>
+          <span class="cat-tag">aka Tabathy</span>
           <div class="cat-stats">
             <div>
               <span class="stat-k">Breed</span>
@@ -516,7 +508,7 @@
             </div>
           </div>
           <p class="cat-desc">
-            Tabsy is a calm presence. He loves to cuddle and has very loud purrs. He also loves to eat. One time, I caught him eating cardboard. He was fine! Tabitha is also very gentle. He can sense how you are feeling and will always show up at the right time with slow blinks and hugs.
+            Tabsy is a calm presence. He loves to cuddle and has very loud purrs. He also loves to eat — one time I caught him eating cardboard. He was fine! Tabitha is also very gentle. He can sense how you are feeling and will always show up at the right time with slow blinks and hugs.
           </p>
         </div>
       </div>
@@ -526,7 +518,7 @@
 
   <!-- QUOTE -->
   <div class="quote-strip">
-    <p class="quote-text">"Cats are a part of your life, but you are their whole world"</p>
+    <p class="quote-text">"Cats are a part of your life, but you are their whole world."</p>
     <p class="quote-attr">— someone online one time</p>
   </div>
 
